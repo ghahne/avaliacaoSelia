@@ -10,7 +10,7 @@ exports.up = function (knex) {
     table.decimal("salario", 8, 2).notNullable();
     table.integer("empresa_id").notNullable().unsigned();
 
-    table.foreign("empresa_id").references("id").inTable("empresa");
+    table.foreign("empresa_id").references("id").inTable("empresas");
   });
 };
 

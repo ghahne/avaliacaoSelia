@@ -89,8 +89,6 @@
           formDataObject.razao_social = formDataObject["razao social"];
           delete formDataObject["razao social"];
 
-          console.log(formDataObject);
-
           // Fazer a solicitação para a API usando fetch()
           fetch("http://localhost:3000/funcionarios", {
             method: "POST",
@@ -117,6 +115,7 @@
               alert(data.message);
             })
             // Caso a promise seja rejeitada, cairá no catch que exibe o erro
+            // Alert é lançado em qualquer ocasião que !res.ok
             .catch((error) => {
               console.error("Erro:", error);
               alert(error.message);
